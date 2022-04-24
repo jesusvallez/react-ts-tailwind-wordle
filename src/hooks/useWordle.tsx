@@ -15,54 +15,47 @@ interface Props {
 const useWordle = ({ solution }: Props) => {
   const [currentGuess, setCurrentGuess] = useState<string>('')
   const [guesses, setGuesses] = useState<Guesses>([]) // each guess is an array
-  const [history, setHistory] = useState<string[]>([]) // each guess is a string
+  // const [history, setHistory] = useState<string[]>([]) // each guess is a string
   const [isCorrect, setIsCorrect] = useState<boolean>(false)
 
   const formatGuess = (): Guess => {
+    let finish = true
     const solutionToLower = solution.toLowerCase()
     const solutionArray = [...solutionToLower]
     const formattedGuess = [...currentGuess.toLowerCase()].map(
       (char, index) => {
-        const tmp: KeyGuess = { key: char, color: 'grey' }
-
-        console.log(
-          solution,
-          char,
-          solution[index],
-          solutionArray.includes(char),
-        )
+        let color: KeyGuess['color']
 
         if (solutionToLower[index] === char) {
-          tmp.color = 'green'
-        } else if (solutionArray.includes(char) && tmp.color !== 'green') {
-          tmp.color = 'yellow'
+          color = 'green'
+        } else if (solutionArray.includes(char)) {
+          color = 'yellow'
+          finish = false
+        } else {
+          color = 'grey'
+          finish = false
         }
 
-        return tmp
+        return { key: char, color }
       },
     )
 
+    setIsCorrect(finish)
     return formattedGuess
   }
 
   const handleKeyup = ({ key }: KeyboardEvent) => {
     if (key === 'Enter') {
-      console.log('key Enter', key)
-      const formattedGuess = formatGuess()
-      console.log(formattedGuess)
-      setCurrentGuess('')
-      setGuesses((prevGuesses) => {
-        const newGuesses = [...prevGuesses, formattedGuess]
-        return newGuesses
-      })
+      if (currentGuess.length === [...solution].length) {
+        setGuesses((prevGuesses) => [...prevGuesses, formatGuess()])
+        setCurrentGuess('')
+      }
     } else if (key === 'Backspace') {
-      console.log('key Backspace', key)
       setCurrentGuess((prev) => prev.slice(0, -1))
     } else if (/^[A-Za-z]$/.test(key)) {
-      if (currentGuess.length < 5) {
+      if (currentGuess.length < [...solution].length) {
         setCurrentGuess((prev) => prev + key)
       }
-      console.log('key', key)
     }
   }
 

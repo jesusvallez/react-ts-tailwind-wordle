@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Wordle = ({ solution }: Props): ReactElement => {
-  const { currentGuess, guesses, handleKeyup } = useWordle({
+  const { currentGuess, isCorrect, guesses, handleKeyup } = useWordle({
     solution,
   })
 
@@ -20,6 +20,7 @@ const Wordle = ({ solution }: Props): ReactElement => {
   return (
     <div>
       <div>solution - {solution}</div>
+      <div>finish?: {isCorrect ? 'yees' : 'no'}</div>
       <div>word: {currentGuess}</div>
       {guesses.length > 0 &&
         guesses.map((guess, index) => {

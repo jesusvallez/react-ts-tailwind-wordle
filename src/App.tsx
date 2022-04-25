@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import Wordle from './components/Wordle'
-import { words } from './content/words'
+import Wordle from '@/components/Wordle'
+import { words } from '@/content/words'
 
 function App(): JSX.Element {
   const [solution] = useState<string>(

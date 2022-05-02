@@ -404,7 +404,7 @@
     "@svgr/hast-util-to-babel-ast" "^6.2.1"
     svg-parser "^2.0.2"
 
-"@types/canvas-confetti@1.4.2", "@types/canvas-confetti@^1.4.2":
+"@types/canvas-confetti@1.4.2":
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/@types/canvas-confetti/-/canvas-confetti-1.4.2.tgz#35c99fc904492fdcc6515c742509e04f3527211c"
   integrity sha512-t45KUDHlwrD9PJVRHc5z1SlXhO82BQEgMKUXGEV1KnWLFMPA6Y5LfUsLTHHzH9KcKDHZLEiYYH5nIDcjRKWNTg==

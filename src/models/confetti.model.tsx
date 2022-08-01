@@ -88,6 +88,3 @@ export interface KeyGuess {
   key: string
   color: 'grey' | 'green' | 'yellow'
 }
-
-export type Guess = KeyGuess[]
-export type Guesses = Guess[]

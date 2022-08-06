@@ -54,6 +54,15 @@ To get a local copy up and running follow these simple example steps.
    ```
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!-- Interesting links -->
+## Interesting links
+Here you have an interesting links to improve in tailwind
+
+- 🔗 https://tailwindcomponents.com/cheatsheet/
+- 🔗 https://tailwindcss.com/docs/customizing-colors
+- 🔗 https://tailwind.simeongriggs.dev/ 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/jesusvallez/react-ts-tailwind-wordle.svg?style=for-the-badge

@@ -1,49 +1,36 @@
 import useWordle from '@/hooks/useWordle'
-import clsx from 'clsx'
-import { ReactElement, useEffect } from 'react'
+import { ReactElement } from 'react'
+import Card from './Card'
+import Confetti from './Confetti'
 
 interface Props {
   solution: string
+  tries?: number
 }
 
-const Wordle = ({ solution }: Props): ReactElement => {
-  const { currentGuess, isCorrect, guesses, handleKeyup } = useWordle({
+const Wordle = ({ solution, tries = 6 }: Props): ReactElement => {
+  const { isCorrect, currentGuess, guesses } = useWordle({
     solution,
+    tries,
   })
 
-  useEffect(() => {
-    window.addEventListener('keyup', handleKeyup)
-
-    return () => window.removeEventListener('keyup', handleKeyup)
-  }, [handleKeyup])
-
   return (
-    <div>
-      <div>solution - {solution}</div>
+    <div className="flex flex-col gap-1">
       <div>finish?: {isCorrect ? 'yees' : 'no'}</div>
       <div>word: {currentGuess}</div>
-      {guesses.length > 0 &&
-        guesses.map((guess, index) => {
-          return (
-            <div className="flex" key={index}>
-              {guess.map((keyGuess, keyIndex) => {
-                return (
-                  <div
-                    key={`${index}-${keyIndex}`}
-                    className={clsx(
-                      'flex justify-center items-center h-8 w-8 m-1 border-black border-2 text-white',
-                      keyGuess.color === 'yellow' && 'bg-amber-500',
-                      keyGuess.color === 'green' && 'bg-green-700',
-                      keyGuess.color === 'grey' && 'bg-gray-500',
-                    )}
-                  >
-                    {keyGuess.key.toLocaleUpperCase()}
-                  </div>
-                )
-              })}
-            </div>
-          )
-        })}
+      <div>solution - {solution}</div>
+
+      <Confetti isCorrect={isCorrect} />
+
+      {guesses.map((guess, i) => (
+        <div className="flex gap-1" key={i}>
+          {guess?.map(({ state, word }, j) => (
+            <Card state={state} key={`${i - j}`}>
+              {word}
+            </Card>
+          ))}
+        </div>
+      ))}
     </div>
   )
 }

@@ -1,42 +1,54 @@
-import { useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
+import { Cell, Guess, Guesses } from '@/models/cell.model'
+import { wordleTemplate } from '@/helpers/wordle'
 
-interface KeyGuess {
-  key: string
-  color: 'grey' | 'green' | 'yellow'
+interface UseWordle {
+  currentGuess: string
+  currentTry: number
+  guesses: Guesses
+  isCorrect: boolean
+  reset: () => void
 }
-
-type Guess = KeyGuess[]
-type Guesses = Guess[]
 
 interface Props {
   solution: string
+  tries?: number
 }
 
-const useWordle = ({ solution }: Props) => {
+const useWordle = ({ solution, tries = 6 }: Props): UseWordle => {
+  const [currentTry, setCurrentTry] = useState<number>(0)
   const [currentGuess, setCurrentGuess] = useState<string>('')
-  const [guesses, setGuesses] = useState<Guesses>([]) // each guess is an array
-  // const [history, setHistory] = useState<string[]>([]) // each guess is a string
   const [isCorrect, setIsCorrect] = useState<boolean>(false)
+  const [guesses, setGuesses] = useState<Guesses>(
+    wordleTemplate(solution, tries),
+  )
+
+  const reset = useCallback(() => {
+    setCurrentGuess('')
+    setGuesses(wordleTemplate(solution, tries))
+    setIsCorrect(false)
+    setCurrentTry(0)
+  }, [solution, tries])
 
   const formatGuess = (): Guess => {
     let finish = true
     const solutionToLower = solution.toLowerCase()
     const solutionArray = [...solutionToLower]
-    const formattedGuess = [...currentGuess.toLowerCase()].map(
-      (char, index) => {
-        let color: KeyGuess['color']
+    const formattedGuess: Guess = [...currentGuess.toLowerCase()].map(
+      (word, index) => {
+        let state: Cell['state']
 
-        if (solutionToLower[index] === char) {
-          color = 'green'
-        } else if (solutionArray.includes(char)) {
-          color = 'yellow'
+        if (solutionToLower[index] === word) {
+          state = 'correct'
+        } else if (solutionArray.includes(word)) {
+          state = 'present'
           finish = false
         } else {
-          color = 'grey'
+          state = 'error'
           finish = false
         }
 
-        return { key: char, color }
+        return { state, word }
       },
     )
 
@@ -45,21 +57,49 @@ const useWordle = ({ solution }: Props) => {
   }
 
   const handleKeyup = ({ key }: KeyboardEvent) => {
-    if (key === 'Enter') {
-      if (currentGuess.length === [...solution].length) {
-        setGuesses((prevGuesses) => [...prevGuesses, formatGuess()])
-        setCurrentGuess('')
-      }
-    } else if (key === 'Backspace') {
-      setCurrentGuess((prev) => prev.slice(0, -1))
-    } else if (/^[A-Za-z]$/.test(key)) {
-      if (currentGuess.length < [...solution].length) {
-        setCurrentGuess((prev) => prev + key)
+    if (currentTry < tries && !isCorrect) {
+      if (key === 'Enter') {
+        if (currentGuess.length === [...solution].length) {
+          setCurrentGuess('')
+          setGuesses((prevGuesses) => {
+            prevGuesses[currentTry] = formatGuess()
+            return prevGuesses
+          })
+          setCurrentTry((prev) => prev + 1)
+        }
+      } else if (key === 'Backspace') {
+        setCurrentGuess((prev) => prev.slice(0, -1))
+        setGuesses((prevGuesses) => {
+          prevGuesses[currentTry][currentGuess.length - 1] = {
+            ...prevGuesses[currentTry][currentGuess.length - 1],
+            word: '',
+          }
+
+          return prevGuesses
+        })
+      } else if (/^[a-zA-Z\u00f1\u00d1]$/.test(key)) {
+        if (currentGuess.length < [...solution].length) {
+          setCurrentGuess((prev) => prev + key)
+          setGuesses((prevGuesses) => {
+            prevGuesses[currentTry][currentGuess.length] = {
+              ...prevGuesses[currentTry][currentGuess.length],
+              word: key,
+            }
+
+            return prevGuesses
+          })
+        }
       }
     }
   }
 
-  return { currentGuess, guesses, isCorrect, handleKeyup }
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyup)
+
+    return () => window.removeEventListener('keydown', handleKeyup)
+  }, [handleKeyup])
+
+  return { currentGuess, currentTry, guesses, isCorrect, reset }
 }
 
 export default useWordle

@@ -1,6 +1,7 @@
+export type State = 'blank' | 'error' | 'present' | 'correct'
 export interface Cell {
   word: string
-  state: 'blank' | 'error' | 'present' | 'correct'
+  state: State
 }
 
 export type Guess = Cell[]

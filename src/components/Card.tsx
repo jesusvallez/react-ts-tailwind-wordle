@@ -1,8 +1,9 @@
-import clsx from 'clsx'
 import { memo, PropsWithChildren, ReactElement } from 'react'
+import { State } from '@/models/cell.model'
+import clsx from 'clsx'
 
 interface Props {
-  state: string
+  state: State
   className?: string
   id?: number
 }
@@ -15,7 +16,8 @@ const Card = ({
 }: PropsWithChildren<Props>): ReactElement => {
   return (
     <div
-      style={{ animationDelay: `${id}00ms` }}
+      data-testid="card"
+      style={{ animationDelay: id ? `${id}00ms` : 'none' }}
       className={clsx(
         'flex h-16 w-16 content-center items-center justify-center text-3xl font-bold uppercase text-white',
         className,

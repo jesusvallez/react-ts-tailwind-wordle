@@ -4,15 +4,18 @@ import { memo, PropsWithChildren, ReactElement } from 'react'
 interface Props {
   state: string
   className?: string
+  id?: number
 }
 
 const Card = ({
   state,
+  id,
   className,
   children,
 }: PropsWithChildren<Props>): ReactElement => {
   return (
     <div
+      style={{ animationDelay: `${id}00ms` }}
       className={clsx(
         'flex h-16 w-16 content-center items-center justify-center text-3xl font-bold uppercase text-white',
         className,

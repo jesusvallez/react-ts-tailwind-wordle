@@ -1,5 +1,19 @@
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
+  mode: 'jit',
   content: ['./src/**/*.{ts,tsx}'],
+  plugins: [
+    plugin(({ matchUtilities }) => {
+      matchUtilities({
+        'animation-delay': (value) => {
+          return {
+            animationDelay: value, // Desired CSS properties here
+          }
+        },
+      })
+    }),
+  ],
   theme: {
     extend: {
       keyframes: {
@@ -39,5 +53,4 @@ module.exports = {
       },
     },
   },
-  plugins: [],
 }

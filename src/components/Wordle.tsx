@@ -22,14 +22,14 @@ const Wordle = ({ solution, tries = 6 }: Props): ReactElement => {
       <div>solution - {solution}</div>
 
       <Confetti isCorrect={isCorrect} />
-
       {guesses.map((guess, i) => (
         <div className="flex gap-1" key={i}>
-          {guess?.map(({ state, word }, j) => (
+          {guess?.map(({ state, word, id }) => (
             <Card
-              className={clsx(i === currentTry && isCorrect && `animate-flip`)}
+              id={id}
+              key={`${i - id}`}
               state={state}
-              key={`${i - j}`}
+              className={clsx(i === currentTry && isCorrect && `animate-flip`)}
             >
               {word}
             </Card>

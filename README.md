@@ -63,6 +63,16 @@ Here you have an interesting links to improve in tailwind
 - 🔗 https://tailwind.simeongriggs.dev/ 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!-- ROADMAP -->
+## Roadmap
+- [ ] Add Changelog
+- [ ] Add custom animation to scale word
+- [ ] Add custom animation to animate cell with bounce
+- [ ] Create keyboard component
+- [ ] Improve responsive layout
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/jesusvallez/react-ts-tailwind-wordle.svg?style=for-the-badge

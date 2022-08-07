@@ -48,7 +48,7 @@ const useWordle = ({ solution, tries = 6 }: Props): UseWordle => {
           finish = false
         }
 
-        return { state, word }
+        return { id: index, state, word }
       },
     )
 

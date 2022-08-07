@@ -1,3 +1,20 @@
+### 1.1.0 (2022-08-07)
+
+##### Chores
+
+* **husky:**
+  *  added hasky rule when changelog is updated ([ec29ab3d](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/ec29ab3d250715eb97cdfacaba36e4f21b77b69c))
+  *  install and configure husky ([ec812c11](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/ec812c1125302968e4118ed3347230092b73aafc))
+* **package:**  update scripts ([276c5925](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/276c59254b24646419a350421672fe6c4cb6f5e5))
+
+##### Documentation Changes
+
+* **readme:**  updated roadmap ([9b3fece8](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/9b3fece81d8015731a355a301dce153429d67cc2))
+
+##### Tests
+
+* **init:**  created boilerplate and added some test ([76157855](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/76157855f92cbddd6da360ea497903643b0e951c))
+
 #### 1.0.1 (2022-08-07)
 
 ##### Chores

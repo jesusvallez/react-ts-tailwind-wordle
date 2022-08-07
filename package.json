@@ -13,9 +13,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "release:major": "npx changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major",
-    "release:minor": "npx changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor",
-    "release:patch": "npx changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch",
+    "release:major": "npx changelog -M && git add CHANGELOG.md && git commit -m 'docs(changelog): updated CHANGELOG.md' && npm version major",
+    "release:minor": "npx changelog -m && git add CHANGELOG.md && git commit -m 'docs(changelog): updated CHANGELOG.md' && npm version minor",
+    "release:patch": "npx changelog -p && git add CHANGELOG.md && git commit -m 'docs(changelog): updated CHANGELOG.md' && npm version patch",
     "push:tag": "git push origin && git push origin --tags",
     "check-types": "tsc",
     "test": "jest"

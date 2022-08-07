@@ -2,6 +2,15 @@ module.exports = {
   content: ['./src/**/*.{ts,tsx}'],
   theme: {
     extend: {
+      keyframes: {
+        flip: {
+          '0%': { transform: 'rotateX(180deg)' },
+          '100%': { transform: 'rotateX(0deg)' },
+        },
+      },
+      animation: {
+        flip: 'flip 0.8s linear 1',
+      },
       colors: {
         green: {
           '50': '#EFF6EF',

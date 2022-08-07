@@ -103,7 +103,7 @@ const useConfetti = ({ isCorrect }: Props): UseConfetti => {
   }, [makeShot])
 
   useEffect(() => {
-    !isCorrect && fire()
+    isCorrect && fire()
   }, [isCorrect])
 
   return { instance }

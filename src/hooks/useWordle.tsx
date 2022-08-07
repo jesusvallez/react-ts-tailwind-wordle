@@ -52,6 +52,10 @@ const useWordle = ({ solution, tries = 6 }: Props): UseWordle => {
       },
     )
 
+    if (!finish) {
+      setCurrentTry((prev) => prev + 1)
+    }
+
     setIsCorrect(finish)
     return formattedGuess
   }
@@ -65,7 +69,6 @@ const useWordle = ({ solution, tries = 6 }: Props): UseWordle => {
             prevGuesses[currentTry] = formatGuess()
             return prevGuesses
           })
-          setCurrentTry((prev) => prev + 1)
         }
       } else if (key === 'Backspace') {
         setCurrentGuess((prev) => prev.slice(0, -1))

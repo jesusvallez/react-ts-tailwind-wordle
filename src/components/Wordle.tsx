@@ -1,4 +1,5 @@
 import useWordle from '@/hooks/useWordle'
+import clsx from 'clsx'
 import { ReactElement } from 'react'
 import Card from './Card'
 import Confetti from './Confetti'
@@ -9,7 +10,7 @@ interface Props {
 }
 
 const Wordle = ({ solution, tries = 6 }: Props): ReactElement => {
-  const { isCorrect, currentGuess, guesses } = useWordle({
+  const { isCorrect, currentGuess, guesses, currentTry } = useWordle({
     solution,
     tries,
   })
@@ -25,7 +26,11 @@ const Wordle = ({ solution, tries = 6 }: Props): ReactElement => {
       {guesses.map((guess, i) => (
         <div className="flex gap-1" key={i}>
           {guess?.map(({ state, word }, j) => (
-            <Card state={state} key={`${i - j}`}>
+            <Card
+              className={clsx(i === currentTry && isCorrect && `animate-flip`)}
+              state={state}
+              key={`${i - j}`}
+            >
               {word}
             </Card>
           ))}

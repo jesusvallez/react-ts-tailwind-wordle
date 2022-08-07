@@ -1,3 +1,16 @@
+#### 1.0.1 (2022-08-07)
+
+##### Chores
+
+* **package:**
+  *  update scripts (fd15cdae)
+  *  remove standard-version from package (b8296982)
+  *  update dependencies (23d91dae)
+
+##### Documentation Changes
+
+* **changelog:**  added changelog (2a118906)
+
 #### 1.0.0 (2022-08-07)
 
 ##### Chores

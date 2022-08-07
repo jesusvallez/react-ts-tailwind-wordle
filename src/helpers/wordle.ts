@@ -1,15 +1,23 @@
-import { State } from '@/models/cell.model'
+import { Guesses } from '@/models/cell.model'
 
 const wordleTemplate = (solution: string, tries: number) => {
-  const state: State = 'blank'
+  const ROWS_SIZE = tries
+  const CELL_SIZE = [...solution].length
 
-  return [...Array(tries)].map((_) =>
-    [...Array([...solution].length)].map((_, i) => ({
-      id: i + 1,
-      state,
-      word: '',
-    })),
-  )
+  const rows: Guesses = new Array(ROWS_SIZE)
+  for (let i = 0; i < ROWS_SIZE; i++) {
+    rows[i] = new Array(CELL_SIZE)
+
+    for (let j = 0; j < CELL_SIZE; j++) {
+      rows[i][j] = {
+        id: j + 1,
+        word: '',
+        state: 'blank',
+      }
+    }
+  }
+
+  return rows
 }
 
 export { wordleTemplate }

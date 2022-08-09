@@ -19,7 +19,7 @@ const Card = ({
       data-testid="card"
       style={{ animationDelay: id ? `${id}00ms` : 'none' }}
       className={clsx(
-        'flex h-16 w-16 content-center items-center justify-center text-3xl font-bold uppercase text-white',
+        'flex h-12 w-12 content-center items-center justify-center text-3xl font-bold uppercase text-white sm:h-16 sm:w-16',
         className,
         state === 'present' && 'bg-yellow-500',
         state === 'correct' && 'bg-green-500',

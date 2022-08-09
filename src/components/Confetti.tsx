@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
+import useConfetti from '@/hooks/useConfetti'
 import ReactCanvasConfetti from 'react-canvas-confetti'
 
-import useConfetti from '@/hooks/useConfetti'
 interface Props {
   isCorrect: boolean
 }

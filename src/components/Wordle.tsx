@@ -2,6 +2,7 @@ import { lazy, ReactElement, useEffect, useState, startTransition } from 'react'
 import useWordle from '@/hooks/useWordle'
 import clsx from 'clsx'
 import Card from './Card'
+import Button from './Button'
 
 const Confetti = lazy(() => import('./Confetti'))
 
@@ -48,6 +49,9 @@ const Wordle = ({ tries = 6 }: Props): ReactElement => {
           ))
         })}
       </div>
+      <Button type="reset" onClick={reset}>
+        Reset
+      </Button>
     </div>
   )
 }

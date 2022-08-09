@@ -1,3 +1,4 @@
+import { words } from '@/content/words'
 import { Guesses } from '@/models/cell.model'
 
 const wordleTemplate = (solution: string, tries: number) => {
@@ -20,4 +21,8 @@ const wordleTemplate = (solution: string, tries: number) => {
   return rows
 }
 
-export { wordleTemplate }
+const getWord = () => {
+  return words[Math.floor(Math.random() * words.length)]
+}
+
+export { wordleTemplate, getWord }

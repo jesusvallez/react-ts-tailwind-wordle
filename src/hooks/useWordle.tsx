@@ -1,21 +1,22 @@
 import { useCallback, useEffect, useState } from 'react'
 import { Cell, Guess, Guesses } from '@/models/cell.model'
-import { wordleTemplate } from '@/helpers/wordle'
+import { getWord, wordleTemplate } from '@/helpers/wordle'
 
 interface UseWordle {
   currentGuess: string
   currentTry: number
   guesses: Guesses
   isCorrect: boolean
+  solution: string
   reset: () => void
 }
 
 interface Props {
-  solution: string
   tries?: number
 }
 
-const useWordle = ({ solution, tries = 6 }: Props): UseWordle => {
+const useWordle = ({ tries = 6 }: Props): UseWordle => {
+  const [solution, setNewSolution] = useState<string>(getWord())
   const [currentTry, setCurrentTry] = useState<number>(0)
   const [currentGuess, setCurrentGuess] = useState<string>('')
   const [isCorrect, setIsCorrect] = useState<boolean>(false)
@@ -25,6 +26,7 @@ const useWordle = ({ solution, tries = 6 }: Props): UseWordle => {
 
   const reset = useCallback(() => {
     setCurrentGuess('')
+    setNewSolution(getWord())
     setGuesses(wordleTemplate(solution, tries))
     setIsCorrect(false)
     setCurrentTry(0)
@@ -102,7 +104,7 @@ const useWordle = ({ solution, tries = 6 }: Props): UseWordle => {
     return () => window.removeEventListener('keydown', handleKeyup)
   }, [handleKeyup])
 
-  return { currentGuess, currentTry, guesses, isCorrect, reset }
+  return { currentGuess, currentTry, guesses, isCorrect, reset, solution }
 }
 
 export default useWordle

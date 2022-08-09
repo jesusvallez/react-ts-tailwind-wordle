@@ -6,16 +6,13 @@ import Card from './Card'
 const Confetti = lazy(() => import('./Confetti'))
 
 interface Props {
-  solution: string
   tries?: number
 }
 
-const Wordle = ({ solution, tries = 6 }: Props): ReactElement => {
+const Wordle = ({ tries = 6 }: Props): ReactElement => {
   const [showConfetti, setConfetti] = useState<boolean>(false)
-  const { isCorrect, currentGuess, guesses, currentTry } = useWordle({
-    solution,
-    tries,
-  })
+  const { isCorrect, currentGuess, guesses, currentTry, reset, solution } =
+    useWordle({ tries })
 
   useEffect(() => {
     if (isCorrect) {
@@ -42,7 +39,7 @@ const Wordle = ({ solution, tries = 6 }: Props): ReactElement => {
           return guess?.map(({ state, word, id }) => (
             <Card
               id={id}
-              key={`${i - id}`}
+              key={`${i}-${id}`}
               state={state}
               className={clsx(i === currentTry && isCorrect && `animate-flip`)}
             >

@@ -23,7 +23,7 @@ const Button = ({
       type={type}
       onClick={onClick}
       className={clsx(
-        'inline-block w-full rounded border-2 border-blue-600 px-6 py-2 text-xs font-medium uppercase leading-normal text-blue-600 transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0',
+        'mr-1 mb-1 rounded border border-gray-500 px-6 py-3 text-sm font-bold uppercase text-gray-500 outline-none transition-all duration-150 ease-linear hover:bg-gray-500 hover:text-white focus:outline-none active:bg-gray-600',
         className,
       )}
     >

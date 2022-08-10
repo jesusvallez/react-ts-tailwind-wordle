@@ -5,20 +5,23 @@ import Card from './Card'
 import Button from './Button'
 
 const Confetti = lazy(() => import('./Confetti'))
+const Modal = lazy(() => import('./Modal'))
 
 interface Props {
   tries?: number
 }
 
 const Wordle = ({ tries = 6 }: Props): ReactElement => {
-  const [showConfetti, setConfetti] = useState<boolean>(false)
+  const [showCongratulation, setCongratulation] = useState<boolean>(false)
+  const [showModal, setModal] = useState<boolean>(false)
   const { isCorrect, currentGuess, guesses, currentTry, reset, solution } =
     useWordle({ tries })
 
   useEffect(() => {
     if (isCorrect) {
       startTransition(() => {
-        setConfetti(true)
+        setCongratulation(true)
+        setModal(true)
       })
     }
   }, [isCorrect])
@@ -29,7 +32,7 @@ const Wordle = ({ tries = 6 }: Props): ReactElement => {
       <div>word: {currentGuess}</div>
       <div>solution - {solution}</div>
 
-      {showConfetti && <Confetti isCorrect={isCorrect} />}
+      {showCongratulation && <Confetti isCorrect={isCorrect} />}
       <div
         className="grid gap-[4px] sm:gap-[8px]"
         style={{
@@ -52,6 +55,8 @@ const Wordle = ({ tries = 6 }: Props): ReactElement => {
       <Button type="reset" onClick={reset}>
         Reset
       </Button>
+
+      {showCongratulation && showModal && <Modal close={setModal} />}
     </div>
   )
 }

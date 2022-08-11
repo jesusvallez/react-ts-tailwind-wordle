@@ -17,13 +17,37 @@ module.exports = {
   theme: {
     extend: {
       keyframes: {
-        flip: {
+        'face-in': {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
+        'face-in-popup': {
+          '0%, 90%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
+        'flip': {
           '0%': { transform: 'rotateX(180deg)' },
           '100%': { transform: 'rotateX(0deg)' },
         },
+        'pop': {
+          '0%': {
+            opacity: 0,
+            transform: 'scale(0.8)',
+          },
+          '40%': {
+            opacity: 1,
+            transform: 'scale(1.1)',
+          },
+          '100%': {
+            transform: 'none',
+          },
+        },
       },
       animation: {
-        flip: 'flip 0.8s linear 1',
+        'flip': 'flip 0.8s linear 1',
+        'pop': 'pop 0.2s linear 1',
+        'face-in': 'face-in 0.6s linear 1',
+        'face-in-popup': 'face-in-popup 2.5s linear 1',
       },
       colors: {
         green: {

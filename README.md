@@ -46,11 +46,11 @@ To get a local copy up and running follow these simple example steps.
    ```
 2. Install NPM packages with Yarn
    ```sh
-   yarn
+   npm i
    ```
 3. To start web
    ```js
-   yarn dev
+   npm run dev
    ```
 <p align="right">(<a href="#top">back to top</a>)</p>
 

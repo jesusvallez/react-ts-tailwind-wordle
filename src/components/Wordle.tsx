@@ -15,8 +15,13 @@ interface Props {
 const Wordle = ({ tries = 6 }: Props): ReactElement => {
   const [showCongratulation, setCongratulation] = useState<boolean>(false)
   const [showModal, setModal] = useState<boolean>(false)
-  const { isCorrect, currentGuess, guesses, currentTry, reset, solution } =
-    useWordle({ tries })
+  const { isCorrect, guesses, currentTry, reset, solution } = useWordle({
+    tries,
+  })
+
+  useEffect(() => {
+    console.log(solution)
+  }, [solution])
 
   useEffect(() => {
     if (isCorrect) {
@@ -29,11 +34,6 @@ const Wordle = ({ tries = 6 }: Props): ReactElement => {
 
   return (
     <div className="flex flex-col gap-1">
-      <div>finish?: {isCorrect ? 'yees' : 'no'}</div>
-      <div>word: {currentGuess}</div>
-      <div>solution - {solution}</div>
-
-      {showCongratulation && <Confetti isCorrect={isCorrect} />}
       <div
         className="grid gap-[4px] sm:gap-[8px]"
         style={{
@@ -61,6 +61,7 @@ const Wordle = ({ tries = 6 }: Props): ReactElement => {
         Reset
       </Button>
 
+      {showCongratulation && <Confetti isCorrect={isCorrect} />}
       {showCongratulation && showModal && (
         <FadeIn>
           <Modal close={setModal} />

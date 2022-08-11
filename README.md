@@ -68,7 +68,7 @@ Here you have an interesting links to improve in tailwind
 ## Roadmap
 - [X] Add Changelog
 - [X] Add jest tests
-- [ ] Add custom animation to scale word
+- [x] Add custom animation to scale word
 - [ ] Add custom animation to animate cell with bounce
 - [ ] Create keyboard component
 - [ ] Improve responsive layout

@@ -4,7 +4,6 @@ import Card from './Card'
 import Button from './Button'
 import { preventKey } from '@/helpers/wordle'
 import FadeIn from './FadeIn'
-import clsx from 'clsx'
 
 const Confetti = lazy(() => import('./Confetti'))
 const Modal = lazy(() => import('./Modal'))
@@ -47,7 +46,7 @@ const Wordle = ({ tries = 6 }: Props): ReactElement => {
               id={id}
               key={`${i}-${id}`}
               state={state}
-              className={clsx(i === currentTry && isCorrect && `animate-flip`)}
+              isCorrect={currentTry === i && isCorrect}
             >
               {word}
             </Card>

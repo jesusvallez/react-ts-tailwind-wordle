@@ -1,3 +1,11 @@
+#### 1.2.1 (2022-08-11)
+
+##### Documentation Changes
+
+* **readme:**
+  *  updated roadmap ([1c09fd7a](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/1c09fd7a10f28417367def26483f7f56d4b1b61b))
+  *  removed duplicated link ([f7487ba0](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/f7487ba0c10ae69ddc0aa40a5a7f640076719ab7))
+
 ### 1.2.0 (2022-08-11)
 
 ##### Chores

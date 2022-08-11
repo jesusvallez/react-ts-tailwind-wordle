@@ -1,8 +1,10 @@
 import { lazy, ReactElement, useEffect, useState, startTransition } from 'react'
 import useWordle from '@/hooks/useWordle'
-import clsx from 'clsx'
 import Card from './Card'
 import Button from './Button'
+import { preventKey } from '@/helpers/wordle'
+import FadeIn from './FadeIn'
+import clsx from 'clsx'
 
 const Confetti = lazy(() => import('./Confetti'))
 const Modal = lazy(() => import('./Modal'))
@@ -52,11 +54,19 @@ const Wordle = ({ tries = 6 }: Props): ReactElement => {
           ))
         })}
       </div>
-      <Button type="reset" onClick={reset}>
+      <Button
+        type="button"
+        onClick={reset}
+        onKeyPress={(e) => preventKey(e, 'Enter')}
+      >
         Reset
       </Button>
 
-      {showCongratulation && showModal && <Modal close={setModal} />}
+      {showCongratulation && showModal && (
+        <FadeIn>
+          <Modal close={setModal} />
+        </FadeIn>
+      )}
     </div>
   )
 }

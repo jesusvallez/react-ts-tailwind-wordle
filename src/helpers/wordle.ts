@@ -1,5 +1,6 @@
 import { words } from '@/content/words'
 import { Guesses } from '@/models/cell.model'
+import type { KeyboardEvent } from 'react'
 
 const wordleTemplate = (solution: string, tries: number) => {
   const ROWS_SIZE = tries
@@ -25,4 +26,11 @@ const getWord = () => {
   return words[Math.floor(Math.random() * words.length)]
 }
 
-export { wordleTemplate, getWord }
+const preventKey = (
+  e: KeyboardEvent<HTMLButtonElement>,
+  key: KeyboardEvent<HTMLButtonElement>['key'],
+) => {
+  e.key === key && e.preventDefault()
+}
+
+export { wordleTemplate, getWord, preventKey }

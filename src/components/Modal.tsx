@@ -38,7 +38,6 @@ const Modal = ({ close }: Props): ReactElement => {
             {/* footer */}
             <div className="flex items-center justify-end rounded-b border-t border-solid border-slate-200 p-6">
               <Button onClick={() => close(false)}>Close</Button>
-              <Button onClick={() => close(false)}>Save Changes</Button>
             </div>
           </div>
         </div>

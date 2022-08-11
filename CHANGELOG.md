@@ -1,3 +1,33 @@
+### 1.2.0 (2022-08-11)
+
+##### Chores
+
+* **deps:**  update deps ([5a8f4624](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/5a8f4624042630aa8f6b0a8c8cb69891947138f5))
+* **components:**  removed unused component ([7de06be3](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/7de06be39dfe25fa90ee35b0751dcc25f05695f6))
+
+##### Documentation Changes
+
+* **readme:**  updated interesting links ([3956ad34](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/3956ad34f962415ef2a024f8bd0ef406da611393))
+
+##### New Features
+
+* **cheats:**  removed cheats from panel ([daad3ca2](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/daad3ca2d0b1a975f623cc1797fc80f7b15f3a4f))
+* **animation:**
+  *  added new pop animation to card component ([24a7037c](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/24a7037cf6766f0cc667e9fa6b9bf5d2a265c84b))
+  *  added news animations ([44ef961e](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/44ef961e4d0b366af224417e876a59a66e84838f))
+* **component:**  created fadein component ([e5c14d26](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/e5c14d262eb7c0fce95dec13fe97c99f28c96765))
+* **congrats:**  created modal component ([e5baed55](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/e5baed555d76d6dd70875c679a577f816960f4fd))
+* **reset:**  created button component to reset game and start again ([018fc045](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/018fc04546b4a13b9ba523648d62e425f455307f))
+* **transition:**  improve performance using lazy loading ([d0c0a3cf](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/d0c0a3cf1925d8a1b4682f3fa7a381faaa75c20b))
+
+##### Bug Fixes
+
+* **key:**  prevent default key when press enter ([656c5282](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/656c52827fc73e89b23299ee56d2e6097547afc8))
+
+##### Refactors
+
+* **hook:**  solution is generated in useWordle ([ebefaa6b](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/ebefaa6b7fdab23b5cf2d0605691376d40480d8c))
+
 ### 1.1.0 (2022-08-07)
 
 ##### Chores

@@ -2,7 +2,6 @@ import { lazy, ReactElement, useEffect, useState, startTransition } from 'react'
 import useWordle from '@/hooks/useWordle'
 import Card from './Card'
 import Button from './Button'
-import { preventKey } from '@/helpers/wordle'
 import FadeIn from './FadeIn'
 
 const Confetti = lazy(() => import('./Confetti'))
@@ -53,11 +52,7 @@ const Wordle = ({ tries = 6 }: Props): ReactElement => {
           ))
         })}
       </div>
-      <Button
-        type="button"
-        onClick={reset}
-        onKeyPress={(e) => preventKey(e, 'Enter')}
-      >
+      <Button preventEnterEvent type="button" onClick={reset}>
         Reset
       </Button>
 

@@ -26,7 +26,8 @@ module.exports = {
           '100%': { opacity: 1 },
         },
         'flip': {
-          '0%': { transform: 'rotateX(180deg)' },
+          '0%': { transform: 'rotateX(0deg)' },
+          '50%': { transform: 'rotateX(90deg)' },
           '100%': { transform: 'rotateX(0deg)' },
         },
         'pop': {

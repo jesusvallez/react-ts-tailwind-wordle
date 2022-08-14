@@ -11,7 +11,7 @@ interface Props {
 
 const Card = ({
   state,
-  id,
+  id = 0,
   isCorrect,
   children,
 }: PropsWithChildren<Props>): ReactElement => {

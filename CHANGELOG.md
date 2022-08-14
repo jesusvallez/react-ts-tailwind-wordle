@@ -1,3 +1,43 @@
+### 1.3.0 (2022-08-14)
+
+##### Chores
+
+* **package:**  update scripts ([8754bde5](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/8754bde5e0b9d099d360a3b8b2d4b0c655037d42))
+* **test:**  check types before run test ([3dadee64](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/3dadee6437009b1509eebcb541c708dbb93aa8e0))
+* **build:**  avoid test to compile project ([3f54753e](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/3f54753e02ad0a06c6d898da92f2609e2ad46e39))
+* **deps:**  update deps ([3e145b4e](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/3e145b4e85f2546970bdbf71a14f17a3a12ed4ac))
+
+##### Documentation Changes
+
+* **readme:**
+  *  updated roadmap ([b58112bc](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/b58112bcf3b7351cffdb1fb3a9859a9d21398a92))
+  *  updated roadmap ([8546f678](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/8546f6786857c456321153b3ae2aaa582986b408))
+  *  updated installation ([d22780c7](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/d22780c7dba4f3723e6b2a9788073d0166c766ad))
+
+##### New Features
+
+* **darkmode:**
+  *  added new button to change theme ([112fc24f](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/112fc24f9550bdf38f25bf745691e52d876b0cf0))
+  *  created context and hook to change theme ([e651cc3a](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/e651cc3afc1c18dcf37c89792f4edf06d4748610))
+  *  changed some variables to base darkmode ([0134a9e5](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/0134a9e542b27fb3ed7140cdd9dd543c02bca5fb))
+* **hooks:**  added new hooks to know theme from system and localstorage ([7acbc40a](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/7acbc40a96ee7b6d18894429748ed4c43b93f0ca))
+
+##### Bug Fixes
+
+* **index:**  removed favicon call ([8a5f79ee](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/8a5f79eec6e2e7b292f8faf518e1dc538bc86ca3))
+
+##### Performance Improvements
+
+* **button:**  prevent render onkeypress ([a9b0d3c1](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/a9b0d3c1b0f0477e7f00bc18e4ce33e97a503553))
+
+##### Refactors
+
+* **animation:**  created new animation to flip cards ([b9b30ecd](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/b9b30ecda6c13c5a9cd61b875a5bc10bf635e15d))
+
+##### Tests
+
+* **card:**  fix card test ([6f36b80b](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/6f36b80b84632805d1881e5e59186a8676792274))
+
 #### 1.2.1 (2022-08-11)
 
 ##### Documentation Changes

@@ -69,11 +69,18 @@ Here you have an interesting links to improve in tailwind
 ## Roadmap
 - [X] Add Changelog
 - [X] Add jest tests
-- [x] Add custom animation to scale word
-- [x] Add darkmode
-- [ ] Add custom animation to animate cell with bounce
 - [ ] Create keyboard component
 - [ ] Improve responsive layout
+  - [x] Board
+  - [ ] Keyboard
+- [ ] Animations
+  - [x] Add custom animation to scale word
+  - [ ] Add custom animation to animate cell with bounce
+- [ ] Add darkmode
+  - [x] Create hook to get darkmode
+  - [ ] Card darkmode
+  - [ ] Modal darkmode
+  - [ ] keyboard darkmode
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

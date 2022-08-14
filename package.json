@@ -13,9 +13,10 @@
     "dev": "vite",
     "build": "tsc --project tsconfig.build.json && vite build",
     "preview": "vite preview",
-    "release:major": "npx changelog -M && git add CHANGELOG.md && git commit -m 'docs(changelog): updated CHANGELOG.md' && npm version major",
-    "release:minor": "npx changelog -m && git add CHANGELOG.md && git commit -m 'docs(changelog): updated CHANGELOG.md' && npm version minor",
-    "release:patch": "npx changelog -p && git add CHANGELOG.md && git commit -m 'docs(changelog): updated CHANGELOG.md' && npm version patch",
+    "release:major": "npx changelog -M && npm run release:commit && npm version major",
+    "release:minor": "npx changelog -m && npm run release:commit && npm version minor",
+    "release:patch": "npx changelog -p && npm run release:commit && npm version patch",
+    "release:commit": "git add CHANGELOG.md && git commit -m 'docs(changelog): updated CHANGELOG.md'",
     "push:tag": "git push origin && git push origin --tags",
     "test": "tsc && jest"
   },

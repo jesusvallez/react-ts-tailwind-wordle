@@ -8,6 +8,10 @@ module.exports = {
   rules: {
     ...config.rules,
     '@typescript-eslint/no-explicit-any': 'error',
+    '@typescript-eslint/no-empty-function': [
+      'error',
+      { allow: ['arrowFunctions'] },
+    ],
     'no-unused-vars': 'off',
     'prettier/prettier': 'error',
     'unused-imports/no-unused-imports': 'error',

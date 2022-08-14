@@ -3,6 +3,7 @@ import useWordle from '@/hooks/useWordle'
 import Card from './Card'
 import Button from './Button'
 import FadeIn from './FadeIn'
+import useThemeMode, { Theme } from '@/ui/hook/useThemeMode'
 
 const Confetti = lazy(() => import('./Confetti'))
 const Modal = lazy(() => import('./Modal'))
@@ -12,6 +13,7 @@ interface Props {
 }
 
 const Wordle = ({ tries = 6 }: Props): ReactElement => {
+  const { currentTheme, changeCurrentTheme } = useThemeMode()
   const [showCongratulation, setCongratulation] = useState<boolean>(false)
   const [showModal, setModal] = useState<boolean>(false)
   const { isCorrect, guesses, currentTry, reset, solution } = useWordle({
@@ -54,6 +56,18 @@ const Wordle = ({ tries = 6 }: Props): ReactElement => {
       </div>
       <Button preventEnterEvent type="button" onClick={reset}>
         Reset
+      </Button>
+      <Button
+        preventEnterEvent
+        type="button"
+        onClick={() =>
+          changeCurrentTheme(
+            currentTheme === Theme.light ? Theme.dark : Theme.light,
+          )
+        }
+      >
+        Change Theme to{' '}
+        {currentTheme === Theme.light ? Theme.dark : Theme.light}
       </Button>
 
       {showCongratulation && <Confetti isCorrect={isCorrect} />}

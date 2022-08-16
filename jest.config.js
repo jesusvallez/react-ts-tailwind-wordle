@@ -2,9 +2,8 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
-  globals: {
-    'ts-jest': {
-      isolatedModules: true,
-    },
+  globals: {},
+  moduleNameMapper: {
+    '@/(.*)': '<rootDir>/src/$1',
   },
 }

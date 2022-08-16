@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App'
-import ThemeContextContainer from './ui/container/ThemeContextContainer'
+import ThemeContextContainer from './contexts/ThemeContextContainer'
 import './index.css'
 
 const root = document.getElementById('root')

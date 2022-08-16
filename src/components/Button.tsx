@@ -9,14 +9,14 @@ import {
 
 interface Props {
   className?: string
-  preventEnterEvent?: boolean
+  keyToPrevent?: string
   onClick?: ButtonHTMLAttributes<HTMLButtonElement>['onClick']
   type?: ButtonHTMLAttributes<HTMLButtonElement>['type']
 }
 
 const Button = ({
   className = '',
-  preventEnterEvent = false,
+  keyToPrevent = '',
   children,
   onClick,
   type = 'button',
@@ -25,9 +25,9 @@ const Button = ({
     <button
       type={type}
       onClick={onClick}
-      onKeyDown={(e) => preventEnterEvent && preventKey(e, 'Enter')}
+      onKeyDown={(e) => keyToPrevent && preventKey(e, keyToPrevent)}
       className={clsx(
-        'rounded border border-gray-500 px-6 py-3 text-sm font-bold uppercase text-gray-500 outline-none transition-all duration-150 ease-linear hover:bg-gray-500 hover:text-white focus:outline-none active:bg-gray-600',
+        'rounded border border-gray-500 px-4 py-2 text-xs font-bold uppercase text-gray-800 outline-none transition-all duration-150 ease-linear hover:bg-gray-500 hover:text-white focus:outline-none active:bg-gray-600 dark:border-gray-200 dark:text-gray-100 dark:hover:bg-gray-200 dark:hover:text-black dark:active:bg-gray-400 sm:text-sm',
         className,
       )}
     >

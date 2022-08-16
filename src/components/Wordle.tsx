@@ -3,7 +3,7 @@ import useWordle from '@/hooks/useWordle'
 import Card from './Card'
 import Button from './Button'
 import FadeIn from './FadeIn'
-import useThemeMode, { Theme } from '@/ui/hook/useThemeMode'
+import useThemeMode, { Theme } from '@/hooks/useThemeMode'
 
 const Confetti = lazy(() => import('./Confetti'))
 const Modal = lazy(() => import('./Modal'))
@@ -13,7 +13,13 @@ interface Props {
 }
 
 const Wordle = ({ tries = 6 }: Props): ReactElement => {
-  const { currentTheme, changeCurrentTheme } = useThemeMode()
+  const {
+    currentTheme,
+    toggleCurrentTheme,
+    setDarkTheme,
+    setLightTheme,
+    setSystemTheme,
+  } = useThemeMode()
   const [showCongratulation, setCongratulation] = useState<boolean>(false)
   const [showModal, setModal] = useState<boolean>(false)
   const { isCorrect, guesses, currentTry, reset, solution } = useWordle({
@@ -54,20 +60,24 @@ const Wordle = ({ tries = 6 }: Props): ReactElement => {
           ))
         })}
       </div>
-      <Button preventEnterEvent type="button" onClick={reset}>
+      <Button keyToPrevent="Enter" type="button" onClick={reset}>
         Reset
       </Button>
-      <Button
-        preventEnterEvent
-        type="button"
-        onClick={() =>
-          changeCurrentTheme(
-            currentTheme === Theme.light ? Theme.dark : Theme.light,
-          )
-        }
-      >
+      <Button keyToPrevent="Enter" type="button" onClick={toggleCurrentTheme}>
         Change Theme to{' '}
         {currentTheme === Theme.light ? Theme.dark : Theme.light}
+      </Button>
+
+      <Button keyToPrevent="Enter" type="button" onClick={setDarkTheme}>
+        Change Theme to Dark theme
+      </Button>
+
+      <Button keyToPrevent="Enter" type="button" onClick={setLightTheme}>
+        Change Theme to Light theme
+      </Button>
+
+      <Button keyToPrevent="Enter" type="button" onClick={setSystemTheme}>
+        Change Theme to System theme
       </Button>
 
       {showCongratulation && <Confetti isCorrect={isCorrect} />}

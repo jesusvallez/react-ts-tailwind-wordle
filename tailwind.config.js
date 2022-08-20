@@ -1,5 +1,7 @@
 const plugin = require('tailwindcss/plugin')
+const customScreens = require('./src/helpers/breakpoints.config.json')
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
   content: ['./src/**/*.{ts,tsx}'],
@@ -15,6 +17,7 @@ module.exports = {
     }),
   ],
   theme: {
+    screens: customScreens,
     extend: {
       keyframes: {
         'face-in': {

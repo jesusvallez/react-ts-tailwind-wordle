@@ -1,5 +1,9 @@
 const vowels = 'aeiou'
-const consonants = 'bcdfghjklmnpqrstvwxyz'
+const consonants = 'bcdfghjklmnñpqrstvwxyz'
+
+const firstLineKeyboard = 'qwertyuiop'
+const secondLineKeyboard = 'asdfghjklñ'
+const thirdLineKeyboard = 'zxcvbnm'
 
 const getRandomCharsFromString = (str: string, length: number) => {
   return shuffle(str).slice(0, length)
@@ -32,4 +36,7 @@ export {
   shuffle,
   getRandomString,
   getRandomCharsFromString,
+  firstLineKeyboard,
+  secondLineKeyboard,
+  thirdLineKeyboard,
 }

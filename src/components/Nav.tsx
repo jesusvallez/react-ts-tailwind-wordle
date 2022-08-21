@@ -10,9 +10,8 @@ const Nav = (): ReactElement => {
             Wordle
           </p>
         </div>
-        <div>
-          <ThemeSwitcher />
-        </div>
+
+        <ThemeSwitcher />
       </div>
     </nav>
   )

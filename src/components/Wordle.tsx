@@ -3,6 +3,7 @@ import useWordle from '@/hooks/useWordle'
 import Card from './Card'
 import Button from './Button'
 import FadeIn from './FadeIn'
+import Keyboard from './Keyboard'
 
 const Confetti = lazy(() => import('./Confetti'))
 const Modal = lazy(() => import('./Modal'))
@@ -74,6 +75,8 @@ const Wordle = ({ tries = 6 }: Props): ReactElement => {
         </svg>{' '}
         Reset
       </Button>
+
+      <Keyboard />
 
       {showCongratulation && <Confetti isCorrect={isCorrect} />}
       {showCongratulation && showModal && (

@@ -24,7 +24,16 @@ const Button = ({
       type={type}
       onKeyDown={(e) => keyToPrevent && preventKey(e, keyToPrevent)}
       className={clsx(
-        'flex items-center justify-center gap-1 rounded border border-gray-500 p-2 text-xs font-bold uppercase text-gray-800 outline-none transition-all duration-150 ease-linear hover:bg-gray-500 hover:text-white focus:outline-none active:bg-gray-600 dark:border-gray-200 dark:text-gray-100 dark:hover:bg-gray-200 dark:hover:text-black dark:active:bg-gray-400 sm:text-sm',
+        'flex items-center justify-center gap-1 p-2',
+        'text-xs font-bold uppercase sm:text-sm',
+        'transition-all duration-150 ease-linear',
+        'rounded border outline-none focus:outline-none',
+        'text-neutral-800 dark:text-neutral-100',
+        'border-neutral-500 dark:border-neutral-200',
+        'hover:text-white dark:hover:text-black',
+        'hover:bg-neutral-500 dark:hover:bg-neutral-200',
+        'active:bg-neutral-400 dark:active:bg-neutral-400',
+
         className,
       )}
     >

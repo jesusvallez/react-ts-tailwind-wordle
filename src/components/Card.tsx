@@ -31,10 +31,11 @@ const Card = ({
         isCorrect && id === 5 && 'animation-delay-[500ms]',
         isCorrect && id === 6 && 'animation-delay-[600ms]',
         isCorrect && id === 7 && 'animation-delay-[700ms]',
-        state === 'present' && 'bg-yellow-500',
-        state === 'correct' && 'bg-green-500',
-        state === 'error' && 'bg-zinc-500',
-        state === 'blank' && 'border-2 border-solid border-gray-400 text-black',
+        state === 'present' && 'bg-yellow-500 dark:bg-yellow-600',
+        state === 'correct' && 'bg-green-500 dark:bg-green-600',
+        state === 'error' && 'bg-zinc-500 dark:bg-zinc-600',
+        state === 'blank' &&
+          'border-2 border-solid border-gray-400 text-black dark:border-zinc-600 dark:bg-zinc-800 dark:text-white',
       )}
     >
       {children}

@@ -1,7 +1,17 @@
-import { PropsWithChildren, ReactElement } from 'react'
+import clsx from 'clsx'
+import { HTMLAttributes, PropsWithChildren, ReactElement } from 'react'
 
-const FadeIn = ({ children }: PropsWithChildren): ReactElement => {
-  return <div className="animate-face-in-popup">{children}</div>
+interface Props {
+  classname?: HTMLAttributes<HTMLDivElement>['className']
+}
+
+const FadeIn = ({
+  children,
+  classname,
+}: PropsWithChildren<Props>): ReactElement => {
+  return (
+    <div className={clsx('animate-face-in-popup', classname)}>{children}</div>
+  )
 }
 
 export default FadeIn

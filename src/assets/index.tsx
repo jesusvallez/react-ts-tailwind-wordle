@@ -1,4 +1,4 @@
-import { ReactComponent as BackspaceLogo } from './backspace.svg'
-import { ReactComponent as EnterLogo } from './enter.svg'
+import { ReactComponent as SVGBackspace } from './backspace.svg'
+import { ReactComponent as SVGEnter } from './enter.svg'
 
-export { BackspaceLogo, EnterLogo }
+export { SVGBackspace, SVGEnter }

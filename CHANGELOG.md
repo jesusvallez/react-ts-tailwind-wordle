@@ -1,3 +1,41 @@
+## 2.0.0 (2022-08-21)
+
+##### Chores
+
+* **tsconfig:**  added sourcemap to config ([365964f5](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/365964f54110ad19f41241741af9f791bcc4ac24))
+* **deps:**
+  *  update deps ([1fe18637](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/1fe18637894721a943ab9a57d4a1e86aca5040c7))
+  *  update deps ([047979b4](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/047979b4b1cfa13aab720e148e3802c2ae7eb760))
+  *  update deps ([402907bf](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/402907bf8d12ba21d9eaddb1721a938e69931896))
+
+##### Documentation Changes
+
+* **readme:**
+  *  updated interesting links ([2c94ce1d](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/2c94ce1d7172b7822498e7d5a3b28ae08952fd23))
+  *  updated roadmap ([10b3b5bc](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/10b3b5bca5828063df5eb43a2e395babf3b42b61))
+
+##### New Features
+
+* **keyboard:**  created keyboard layout with event simulate ([3f1b8277](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/3f1b82779b4542e671d92efd0c3e542dcf43e579))
+* **darkmode:**
+  *  added dark mode to card and button ([1fd164ca](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/1fd164cad31a4408caadc32eceff5a44dfb47f73))
+  *  moved and improved dark mode hook to change to a specific theme ([404bc89c](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/404bc89c8d6d9dcc0cb2f45abd177aa8d6081c7c))
+* **hooks:**  created useBreakpoint and used json to define custom breakpoints ([8df494ba](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/8df494ba3bedcb250ee1976ef374cd364d295075))
+* **usevh:**  created hook to set 100vh equal to the actual browser inner window height ([75b67daf](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/75b67daf164697675b282f78000dc3782a7a3af9))
+
+##### Bug Fixes
+
+* **svg:**  changed props to work with react ([88247f44](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/88247f44c08876cbe57a432651b67a899e8c3c84))
+
+##### Refactors
+
+* **layaout:**  created nav, footer and theme switcher ([d89317fb](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/d89317fb58207d36ad5664a84dcad160c4790643))
+* **hooks:**  modify useMedia to be used with another hooks ([9d831c95](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/9d831c95e2adaf3966d4e751316e2faae3a15b99))
+
+##### Tests
+
+* **config:**  added absolute path to jest config ([6a75618b](https://github.com/jesusvallez/react-ts-tailwind-wordle/commit/6a75618b3bbdc3caf43712afe9d6d6559f8222b6))
+
 ### 1.3.0 (2022-08-14)
 
 ##### Chores

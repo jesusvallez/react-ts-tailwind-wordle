@@ -3,7 +3,6 @@ import useWordle from '@/hooks/useWordle'
 import Card from './Card'
 import Button from './Button'
 import FadeIn from './FadeIn'
-import useThemeMode, { Theme } from '@/hooks/useThemeMode'
 
 const Confetti = lazy(() => import('./Confetti'))
 const Modal = lazy(() => import('./Modal'))
@@ -13,13 +12,6 @@ interface Props {
 }
 
 const Wordle = ({ tries = 6 }: Props): ReactElement => {
-  const {
-    currentTheme,
-    toggleCurrentTheme,
-    setDarkTheme,
-    setLightTheme,
-    setSystemTheme,
-  } = useThemeMode()
   const [showCongratulation, setCongratulation] = useState<boolean>(false)
   const [showModal, setModal] = useState<boolean>(false)
   const { isCorrect, guesses, currentTry, reset, solution } = useWordle({
@@ -60,24 +52,27 @@ const Wordle = ({ tries = 6 }: Props): ReactElement => {
           ))
         })}
       </div>
-      <Button keyToPrevent="Enter" type="button" onClick={reset}>
+      <Button
+        keyToPrevent="Enter"
+        type="button"
+        onClick={reset}
+        className="gap-1"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+          />
+        </svg>{' '}
         Reset
-      </Button>
-      <Button keyToPrevent="Enter" type="button" onClick={toggleCurrentTheme}>
-        Change Theme to{' '}
-        {currentTheme === Theme.light ? Theme.dark : Theme.light}
-      </Button>
-
-      <Button keyToPrevent="Enter" type="button" onClick={setDarkTheme}>
-        Change Theme to Dark theme
-      </Button>
-
-      <Button keyToPrevent="Enter" type="button" onClick={setLightTheme}>
-        Change Theme to Light theme
-      </Button>
-
-      <Button keyToPrevent="Enter" type="button" onClick={setSystemTheme}>
-        Change Theme to System theme
       </Button>
 
       {showCongratulation && <Confetti isCorrect={isCorrect} />}

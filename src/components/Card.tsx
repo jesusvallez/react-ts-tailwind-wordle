@@ -9,12 +9,7 @@ interface Props {
   id?: number
 }
 
-const Card = ({
-  state,
-  id = 0,
-  isCorrect,
-  children,
-}: PropsWithChildren<Props>): ReactElement => {
+const Card = ({ state, id = 0, isCorrect, children }: PropsWithChildren<Props>): ReactElement => {
   return (
     <div
       data-testid="card"

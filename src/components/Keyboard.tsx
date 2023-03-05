@@ -1,10 +1,6 @@
 import { memo, ReactElement, useCallback } from 'react'
 import { SVGBackspace, SVGEnter } from '@/assets'
-import {
-  firstLineKeyboard,
-  secondLineKeyboard,
-  thirdLineKeyboard,
-} from '@/helpers/string'
+import { firstLineKeyboard, secondLineKeyboard, thirdLineKeyboard } from '@/helpers/string'
 import Button from './Button'
 import clsx from 'clsx'
 
@@ -25,11 +21,7 @@ const Keyboard = (): ReactElement => {
         <div className="flex gap-1">
           {[...firstLineKeyboard].map((word) => {
             return (
-              <Button
-                key={word}
-                className={clsx(buttonSize)}
-                onClick={() => simulateKeyPressButton(word)}
-              >
+              <Button key={word} className={clsx(buttonSize)} onClick={() => simulateKeyPressButton(word)}>
                 {word}
               </Button>
             )
@@ -38,38 +30,24 @@ const Keyboard = (): ReactElement => {
         <div className="flex gap-1">
           {[...secondLineKeyboard].map((word) => {
             return (
-              <Button
-                key={word}
-                className={clsx(buttonSize)}
-                onClick={() => simulateKeyPressButton(word)}
-              >
+              <Button key={word} className={clsx(buttonSize)} onClick={() => simulateKeyPressButton(word)}>
                 {word}
               </Button>
             )
           })}
         </div>
         <div className="flex gap-1">
-          <Button
-            className={clsx(buttonSize, 'flex-1')}
-            onClick={() => simulateKeyPressButton('Backspace')}
-          >
+          <Button className={clsx(buttonSize, 'flex-1')} onClick={() => simulateKeyPressButton('Backspace')}>
             <SVGBackspace />
           </Button>
           {[...thirdLineKeyboard].map((word) => {
             return (
-              <Button
-                key={word}
-                className={clsx(buttonSize)}
-                onClick={() => simulateKeyPressButton(word)}
-              >
+              <Button key={word} className={clsx(buttonSize)} onClick={() => simulateKeyPressButton(word)}>
                 {word}
               </Button>
             )
           })}
-          <Button
-            className={clsx(buttonSize, 'flex-1')}
-            onClick={() => simulateKeyPressButton('Enter')}
-          >
+          <Button className={clsx(buttonSize, 'flex-1')} onClick={() => simulateKeyPressButton('Enter')}>
             <SVGEnter />
           </Button>
         </div>

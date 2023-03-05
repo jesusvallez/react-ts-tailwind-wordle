@@ -6,11 +6,7 @@ interface Props {
   close: (state: boolean) => void
 }
 
-const Modal = ({
-  close,
-  title,
-  children,
-}: PropsWithChildren<Props>): ReactElement => {
+const Modal = ({ close, title, children }: PropsWithChildren<Props>): ReactElement => {
   return (
     <>
       <div className=" fixed inset-0 z-50 flex items-center justify-center overflow-y-auto overflow-x-hidden text-left outline-none focus:outline-none">
@@ -31,9 +27,7 @@ const Modal = ({
             </div>
             {/* body */}
             <div className="relative flex-auto p-6">
-              <p className="my-4 text-lg leading-relaxed text-slate-700">
-                {children}
-              </p>
+              <p className="my-4 text-lg leading-relaxed text-slate-700">{children}</p>
             </div>
             {/* footer */}
             <div className="flex items-center justify-end rounded-b border-t border-solid border-slate-200 p-6">

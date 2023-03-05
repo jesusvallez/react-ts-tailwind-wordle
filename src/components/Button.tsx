@@ -1,11 +1,6 @@
 import { preventKey } from '@/helpers/wordle'
 import clsx from 'clsx'
-import {
-  ReactElement,
-  PropsWithChildren,
-  ButtonHTMLAttributes,
-  memo,
-} from 'react'
+import { ReactElement, PropsWithChildren, ButtonHTMLAttributes, memo } from 'react'
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   keyToPrevent?: string

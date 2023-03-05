@@ -17,17 +17,14 @@ const useConfetti = ({ isCorrect }: Props): UseConfetti => {
     refAnimationInstance.current = instance
   }, [])
 
-  const makeShot = useCallback(
-    (particleRatio: number, opts: ConfettiOptions) => {
-      refAnimationInstance.current &&
-        refAnimationInstance.current({
-          ...opts,
-          origin: { y: 0.8 },
-          particleCount: Math.floor(200 * particleRatio),
-        })
-    },
-    [],
-  )
+  const makeShot = useCallback((particleRatio: number, opts: ConfettiOptions) => {
+    refAnimationInstance.current &&
+      refAnimationInstance.current({
+        ...opts,
+        origin: { y: 0.8 },
+        particleCount: Math.floor(200 * particleRatio),
+      })
+  }, [])
 
   const fire = useCallback(() => {
     makeShot(0.1, {

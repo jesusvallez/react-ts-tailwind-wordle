@@ -6,10 +6,7 @@ const ThemeSwitcher = (): ReactElement => {
   const { currentTheme, setDarkTheme, setLightTheme } = useThemeMode()
 
   return (
-    <Button
-      onClick={currentTheme === Theme.light ? setDarkTheme : setLightTheme}
-      className="border-none"
-    >
+    <Button onClick={currentTheme === Theme.light ? setDarkTheme : setLightTheme} className="border-none">
       <svg
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

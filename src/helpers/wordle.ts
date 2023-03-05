@@ -26,10 +26,7 @@ const getWord = () => {
   return words[Math.floor(Math.random() * words.length)]
 }
 
-const preventKey = (
-  e: KeyboardEvent<HTMLButtonElement>,
-  key: KeyboardEvent<HTMLButtonElement>['key'],
-) => {
+const preventKey = (e: KeyboardEvent<HTMLButtonElement>, key: KeyboardEvent<HTMLButtonElement>['key']) => {
   e.key === key && e.preventDefault()
 }
 

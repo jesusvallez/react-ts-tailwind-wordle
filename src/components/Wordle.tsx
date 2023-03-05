@@ -46,23 +46,13 @@ const Wordle = ({ tries = 6 }: Props): ReactElement => {
         >
           {guesses.map((guess, i) => {
             return guess?.map(({ state, word, id }) => (
-              <Card
-                id={id}
-                key={`${i}-${id}`}
-                state={state}
-                isCorrect={currentTry === i && isCorrect}
-              >
+              <Card id={id} key={`${i}-${id}`} state={state} isCorrect={currentTry === i && isCorrect}>
                 {word}
               </Card>
             ))
           })}
         </div>
-        <Button
-          keyToPrevent="Enter"
-          type="button"
-          onClick={reset}
-          className="mt-4 gap-1"
-        >
+        <Button keyToPrevent="Enter" type="button" onClick={reset} className="mt-4 gap-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-4 w-4"
@@ -83,10 +73,7 @@ const Wordle = ({ tries = 6 }: Props): ReactElement => {
         {showCongratulation && <Confetti isCorrect={isCorrect} />}
         {showModal && (
           <FadeIn classname={!isCorrect ? 'animate-face-in' : ''}>
-            <Modal
-              title={isCorrect ? 'CONGRATS!!' : 'OH NOO! YOU LOSE'}
-              close={setModal}
-            >
+            <Modal title={isCorrect ? 'CONGRATS!!' : 'OH NOO! YOU LOSE'} close={setModal}>
               {isCorrect
                 ? `You did it. You won! If you want, you can play again. Try it`
                 : `I am so sorry, the word was "${solution}"... but, do not worry, you will do better next time.`}

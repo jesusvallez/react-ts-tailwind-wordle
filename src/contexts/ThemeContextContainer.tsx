@@ -7,13 +7,9 @@ const DARK_MODE = Theme.dark
 
 const ThemeContextContainer = ({ children }: PropsWithChildren) => {
   const prefersDarkMode = usePrefersDarkMode()
-  const [prefersTheme] = useState<Theme>(() =>
-    prefersDarkMode ? DARK_MODE : LIGHT_MODE,
-  )
+  const [prefersTheme] = useState<Theme>(() => (prefersDarkMode ? DARK_MODE : LIGHT_MODE))
 
-  const [theme, setTheme] = useState<Theme>(
-    (localStorage.getItem(LOCALSTORAGE_KEY) as Theme) || prefersTheme,
-  )
+  const [theme, setTheme] = useState<Theme>((localStorage.getItem(LOCALSTORAGE_KEY) as Theme) || prefersTheme)
 
   const changeCurrentTheme = useCallback((newTheme: Theme) => {
     setTheme(newTheme)

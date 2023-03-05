@@ -18,7 +18,8 @@
     "release:patch": "npx changelog -p && npm run release:commit && npm version patch",
     "release:commit": "git add CHANGELOG.md && git commit -m 'docs(changelog): updated CHANGELOG.md'",
     "push:tag": "git push origin && git push origin --tags",
-    "test": "tsc && jest"
+    "test": "tsc && jest",
+    "lint": "eslint src/. --fix"
   },
   "dependencies": {
     "clsx": "^1.2.1",

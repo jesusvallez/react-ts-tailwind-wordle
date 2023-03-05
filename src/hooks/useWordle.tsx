@@ -20,9 +20,7 @@ const useWordle = ({ tries = 6 }: Props): UseWordle => {
   const [currentTry, setCurrentTry] = useState<number>(0)
   const [currentGuess, setCurrentGuess] = useState<string>('')
   const [isCorrect, setIsCorrect] = useState<boolean>(false)
-  const [guesses, setGuesses] = useState<Guesses>(
-    wordleTemplate(solution, tries),
-  )
+  const [guesses, setGuesses] = useState<Guesses>(wordleTemplate(solution, tries))
 
   const reset = useCallback(() => {
     setCurrentGuess('')
@@ -36,23 +34,21 @@ const useWordle = ({ tries = 6 }: Props): UseWordle => {
     let finish = true
     const solutionToLower = solution.toLowerCase()
     const solutionArray = [...solutionToLower]
-    const formattedGuess: Guess = [...currentGuess.toLowerCase()].map(
-      (word, index) => {
-        let state: Cell['state']
+    const formattedGuess: Guess = [...currentGuess.toLowerCase()].map((word, index) => {
+      let state: Cell['state']
 
-        if (solutionToLower[index] === word) {
-          state = 'correct'
-        } else if (solutionArray.includes(word)) {
-          state = 'present'
-          finish = false
-        } else {
-          state = 'error'
-          finish = false
-        }
+      if (solutionToLower[index] === word) {
+        state = 'correct'
+      } else if (solutionArray.includes(word)) {
+        state = 'present'
+        finish = false
+      } else {
+        state = 'error'
+        finish = false
+      }
 
-        return { id: index, state, word }
-      },
-    )
+      return { id: index, state, word }
+    })
 
     if (!finish) {
       setCurrentTry((prev) => prev + 1)

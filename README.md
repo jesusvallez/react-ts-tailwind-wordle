@@ -8,6 +8,7 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -27,7 +28,7 @@
     <a href="https://github.com/jesusvallez/react-ts-tailwind-wordle"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/jesusvallez/react-ts-tailwind-wordle">View Demo</a>
+    <a href="https://react-ts-tailwind-wordle.netlify.app/">View Demo</a>
     -
     <a href="https://github.com/jesusvallez/react-ts-tailwind-wordle/issues">Report Bug</a>
     ·
@@ -36,10 +37,13 @@
 </div>
 
 <!-- GETTING STARTED -->
+
 ## Getting Started
+
 To get a local copy up and running follow these simple example steps.
 
 ### Installation
+
 1. Clone the repo
    ```sh
    git clone git@github.com:jesusvallez/react-ts-tailwind-wordle.git
@@ -52,41 +56,46 @@ To get a local copy up and running follow these simple example steps.
    ```js
    npm run dev
    ```
-<p align="right">(<a href="#top">back to top</a>)</p>
+   <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- Interesting links -->
+
 ## Interesting links
+
 Here you have an interesting links to improve in tailwind
 
 - 🔗 https://tailwindcomponents.com/cheatsheet/
 - 🔗 https://tailwindcss.com/docs/customizing-colors
-- 🔗 https://tailwind.simeongriggs.dev/ 
+- 🔗 https://tailwind.simeongriggs.dev/
 - 🔗 https://www.creative-tim.com/learning-lab/tailwind-starter-kit
 - 🔗 https://www.hyperui.dev/
 - 🔗 https://daisyui.com/
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- ROADMAP -->
+
 ## Roadmap
-- [X] Add Changelog
-- [X] Add jest tests
-- [ ] Create keyboard component
-- [ ] Improve responsive layout
+
+- [x] Add Changelog
+- [x] Add jest tests
+- [x] Create keyboard component
+- [x] Improve responsive layout
   - [x] Board
-  - [ ] Keyboard
+  - [x] Keyboard
 - [ ] Animations
   - [x] Add custom animation to scale word
   - [ ] Add custom animation to animate cell with bounce
 - [ ] Add darkmode
   - [x] Create hook to get darkmode
-  - [ ] Card darkmode
+  - [x] Card darkmode
   - [ ] Modal darkmode
-  - [ ] keyboard darkmode
+  - [x] keyboard darkmode
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/jesusvallez/react-ts-tailwind-wordle.svg?style=for-the-badge
 [contributors-url]: https://github.com/jesusvallez/react-ts-tailwind-wordle/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/jesusvallez/react-ts-tailwind-wordle.svg?style=for-the-badge
